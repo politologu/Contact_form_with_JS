@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	                          <style>
+                                  body {
+                                        background-color: #F4F4F4;
+                                  }
+                                   #wrapper {
+                                        width: 170px;
+                                        margin: 0px auto;
+                                        border: 1px solid #ccc;
+                                        padding: 50px 150px 50px 150px;
+                                        background-color: #FFF;
+                                   }       
+                                   #contactform {
+                                        height: 50px;
+                                        
+                                        width: 454px;
+                                        height: 20px;
+                                        padding: 20px 0px 20px 20px;
+                                        /*border: 1px solid #000;*/
+                                        margin: 0px auto;
+                                        display: none;
+                                        color: #FFF;
+                                   }
+                                  </style>
+</head>
+<body>                      
+
+                <div id="contactform"></div>
+                <div id="wrapper">
+                                 
+                <form>
+                        
+
+                        First Name:<br>
+                        <input type="text" id="fname"/> <br> <br>
+                        Last Name: <br>
+                        <input type="text" id="lname"> <br> <br>
+                        Email: <br>
+                        <input type="text" id="email"> <br> <br>
+                        Password: <br>
+                        <input type="password" id="password"> <br> <br>
+
+                        <input type="button" value="Sign Upp" onclick="validateForm()">
+
+
+
+                </form>
+        </div>
+                <script type="text/javascript">
+                        
+                                 function validateForm() {
+                                      var contactform = document.getElementById('contactform');
+                                      contactform.style.display = 'block';
+                                      var fname = document.getElementById('fname').value;
+                                      var lname = document.getElementById('lname').value;
+                                      var email = document.getElementById('email').value;
+                                      var password = document.getElementById('password').value;
+
+                                
+
+                                      if (fname == '' || lname == '' || email == '' || password == '') {
+                                        contactform.innerHTML = "please all the fields";
+                                        contactform.style.backgroundColor = "red";
+                                        
+                                      } else if (fname.length < 4 ) {
+                                        contactform.innerHTML = "first name is to short";
+                                         contactform.style.backgroundColor = "red";
+                                      } else if (lname.length < 4) {
+                                        contactform.innerHTML = "Last name is to short";
+                                         contactform.style.backgroundColor = "red";
+                                      } else {
+                                        contactform.innerHTML = "You are successfully registered!";
+                                         contactform.style.backgroundColor = "green";
+                                      }
+                                 }
+
+                                 
+                </script>
+
+        </body>
+     
+</html>
